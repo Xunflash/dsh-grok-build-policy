@@ -2,7 +2,11 @@
 
 DeepSeek Harness 插件。当前模型 id 包含 `grok` 时，在系统提示词里追加一段工作规则。换成其他模型后，这段规则不会出现。
 
-规则改编自 [xai-org/grok-build](https://github.com/xai-org/grok-build)（Apache-2.0）的默认代理提示词，只保留能在 Harness 里独立成立的部分：
+规则改编自 [xai-org/grok-build](https://github.com/xai-org/grok-build)（Apache-2.0）的默认系统提示词，只保留能在 Harness 里独立成立的部分。原文在：
+
+[`crates/codegen/xai-grok-agent/templates/prompt.md`](https://github.com/xai-org/grok-build/blob/main/crates/codegen/xai-grok-agent/templates/prompt.md)
+
+运行时由 [`PromptContext::render_with_renderer`](https://github.com/xai-org/grok-build/blob/main/crates/codegen/xai-grok-agent/src/prompt/context.rs) 渲染。同目录还有两份模板，本插件没有采用：`apply_patch_prompt.md`（Codex 模式）和 `subagent_prompt.md`（子代理）。
 
 - 危险操作先看可逆性和影响范围
 - 明确的可逆工作在当前回合做完，结论要有工具输出
