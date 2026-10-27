@@ -34,3 +34,7 @@ dsh plugin --profile web add /absolute/path/to/grok-build-policy
 | `providerPattern` | 空 | 提供方 id 需要包含的子串。留空则不限制提供方。 |
 
 两个都留空时，这段规则不会注入。
+
+## 许可
+
+[Apache License 2.0](LICENSE)。工作规则改编自同样以 Apache-2.0 授权的 grok-build，出处写在 [NOTICE](NOTICE)。

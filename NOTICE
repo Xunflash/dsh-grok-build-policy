@@ -1,0 +1,7 @@
+grok-build-policy
+Copyright 2026 Xunflash
+
+This product includes working rules adapted from xai-org/grok-build
+(https://github.com/xai-org/grok-build), which is licensed under the
+Apache License, Version 2.0. The source template is
+crates/codegen/xai-grok-agent/templates/prompt.md.
