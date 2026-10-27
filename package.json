@@ -1,10 +1,23 @@
 {
-  "name": "@local/grok-build-policy",
+  "name": "grok-build-policy",
   "version": "1.0.0",
-  "private": true,
   "type": "module",
   "description": "Adds Grok Build working rules to the system prompt while a Grok model is selected.",
   "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Xunflash/grok-build-policy.git"
+  },
+  "homepage": "https://github.com/Xunflash/grok-build-policy#readme",
+  "bugs": {
+    "url": "https://github.com/Xunflash/grok-build-policy/issues"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "grok"
+  ],
   "exports": {
     ".": "./index.js",
     "./locale/*.json": "./locale/*.json",
@@ -15,6 +28,7 @@
     "cordis.patch.yml",
     "locale/*.json",
     "icon.svg",
+    "README.md",
     "LICENSE",
     "NOTICE"
   ],

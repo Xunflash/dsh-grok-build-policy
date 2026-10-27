@@ -27,27 +27,31 @@ DeepSeek Harness 插件。当前模型 id 包含 `grok` 时，在系统提示词
 
 把下面命令里的 `web` 换成要启用的 profile 名称。安装进该 profile 的全部会话。
 
-从 GitHub 安装。仓库需要能被这台机器访问；私有仓库要先有对应的 Git 凭据。
+从 npm 安装：
+
+```sh
+dsh plugin --profile web add grok-build-policy
+```
+
+从 GitHub 安装：
 
 ```sh
 dsh plugin --profile web add github:Xunflash/grok-build-policy
 ```
 
-从本机目录安装，适合改源码：
+改源码时从本机目录安装：
 
 ```sh
 dsh plugin --profile web add /absolute/path/to/grok-build-policy
 ```
 
-装好后可以用配置检查这一行是否在组合结果里：
+装好后检查这一行是否在组合结果里：
 
 ```sh
 dsh --profile web --dump-config
 ```
 
 输出中应有 `id: grok-build-policy`。Web profile 开了配置热重载时，下一次模型请求就会用上；没有热重载时，重启这个 profile。
-
-这个包没有安装脚本。如果 pnpm 仍停在构建批准，按 `dsh` 打印的键把包名加进该 profile 的 `pnpm-workspace.yaml` 的 `allowBuilds`，然后重跑同一条安装命令。
 
 ### 配置
 
@@ -58,13 +62,13 @@ dsh --profile web --dump-config
 | `modelPattern` | `grok` | 模型 id 需要包含的子串。留空则不按模型过滤。 |
 | `providerPattern` | 空 | 提供方 id 需要包含的子串。留空则不限制提供方。 |
 
-两个都留空时，这段规则不会注入。默认配置下，`grok-4.7` 和 `sub2api-grok-build/grok-4.7` 会匹配，`deepseek-v4` 不会。
+两个都留空时，这段规则不会注入。默认配置下，`grok-4` 和 `grok-4.7` 会匹配，`deepseek-v4` 不会。
 
 要改已安装的 profile，在该 profile 的 `cordis.patch.yml` 末尾覆盖这一行。`config` 会被整段替换，所以两个字段都要写：
 
 ```yaml
 - id: grok-build-policy
-  name: "@local/grok-build-policy"
+  name: grok-build-policy
   config:
     modelPattern: grok
     providerPattern: ""
@@ -73,7 +77,7 @@ dsh --profile web --dump-config
 ### 卸载
 
 ```sh
-dsh plugin --profile web remove @local/grok-build-policy
+dsh plugin --profile web remove grok-build-policy
 ```
 
 ### 许可
@@ -105,7 +109,13 @@ It does not replace the Harness identity line or its tool instructions. It also 
 
 Replace `web` with the profile that should receive the plugin. Installation applies to every session in that profile.
 
-Install from GitHub. The machine must be able to read the repository. A private repository needs Git credentials first.
+Install from npm:
+
+```sh
+dsh plugin --profile web add grok-build-policy
+```
+
+Install from GitHub:
 
 ```sh
 dsh plugin --profile web add github:Xunflash/grok-build-policy
@@ -125,8 +135,6 @@ dsh --profile web --dump-config
 
 The output should contain `id: grok-build-policy`. On the Web profile, configuration reload is enabled, so the next model request picks the plugin up. Without reload, restart that profile.
 
-This package has no install script. If pnpm still stops on a build approval, add the key that `dsh` prints under `allowBuilds` in that profile's `pnpm-workspace.yaml`, then run the same install command again.
-
 ### Configuration
 
 Matching runs on every system-prompt assembly and is case-insensitive. `modelPattern` and `providerPattern` are substrings.
@@ -136,13 +144,13 @@ Matching runs on every system-prompt assembly and is case-insensitive. `modelPat
 | `modelPattern` | `grok` | Substring the model id must contain. Empty skips the model check. |
 | `providerPattern` | empty | Substring the provider id must contain. Empty allows every provider. |
 
-When both are empty, the rules are not injected. With the defaults, `grok-4.7` and `sub2api-grok-build/grok-4.7` match, and `deepseek-v4` does not.
+When both are empty, the rules are not injected. With the defaults, `grok-4` and `grok-4.7` match, and `deepseek-v4` does not.
 
 To change an installed profile, append an override to that profile's `cordis.patch.yml`. `config` is replaced as a whole, so write both fields:
 
 ```yaml
 - id: grok-build-policy
-  name: "@local/grok-build-policy"
+  name: grok-build-policy
   config:
     modelPattern: grok
     providerPattern: ""
@@ -151,7 +159,7 @@ To change an installed profile, append an override to that profile's `cordis.pat
 ### Remove
 
 ```sh
-dsh plugin --profile web remove @local/grok-build-policy
+dsh plugin --profile web remove grok-build-policy
 ```
 
 ### License
