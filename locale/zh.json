@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Grok Build 策略",
+    "description": "当前模型 id 包含 grok 时，把 Grok Build 的工作规则加进系统提示词：危险操作、把事做完、临时文件、说话方式、格式和浏览器验证。可在插件配置里改 modelPattern 或 providerPattern。"
+  }
+}

@@ -1,0 +1,6 @@
+- insert:
+    - id: grok-build-policy
+      name: '@local/grok-build-policy'
+      config:
+        modelPattern: grok
+        providerPattern: ''

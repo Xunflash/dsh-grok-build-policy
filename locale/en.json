@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Grok Build policy",
+    "description": "While the selected model id contains grok, adds Grok Build working rules for dangerous actions, finishing the task, scratch files, communication, formatting, and browser checks. Change modelPattern or providerPattern in the plugin config to adjust the match."
+  }
+}
