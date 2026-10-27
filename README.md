@@ -1,4 +1,4 @@
-# Grok Build policy
+# dsh-grok-build-policy
 
 [中文](#中文) · [English](#english)
 
@@ -36,13 +36,13 @@ dsh plugin --profile web add dsh-grok-build-policy
 从 GitHub 安装：
 
 ```sh
-dsh plugin --profile web add github:Xunflash/grok-build-policy
+dsh plugin --profile web add github:Xunflash/dsh-grok-build-policy
 ```
 
 改源码时从本机目录安装：
 
 ```sh
-dsh plugin --profile web add /absolute/path/to/grok-build-policy
+dsh plugin --profile web add /absolute/path/to/dsh-grok-build-policy
 ```
 
 装好后检查这一行是否在组合结果里：
@@ -118,13 +118,13 @@ dsh plugin --profile web add dsh-grok-build-policy
 Install from GitHub:
 
 ```sh
-dsh plugin --profile web add github:Xunflash/grok-build-policy
+dsh plugin --profile web add github:Xunflash/dsh-grok-build-policy
 ```
 
 Install from a local checkout while changing the source:
 
 ```sh
-dsh plugin --profile web add /absolute/path/to/grok-build-policy
+dsh plugin --profile web add /absolute/path/to/dsh-grok-build-policy
 ```
 
 Confirm the row is in the composed profile:

@@ -6,11 +6,11 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Xunflash/grok-build-policy.git"
+    "url": "git+https://github.com/Xunflash/dsh-grok-build-policy.git"
   },
-  "homepage": "https://github.com/Xunflash/grok-build-policy#readme",
+  "homepage": "https://github.com/Xunflash/dsh-grok-build-policy#readme",
   "bugs": {
-    "url": "https://github.com/Xunflash/grok-build-policy/issues"
+    "url": "https://github.com/Xunflash/dsh-grok-build-policy/issues"
   },
   "keywords": [
     "dsh",
