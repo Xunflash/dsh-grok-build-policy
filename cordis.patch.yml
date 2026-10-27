@@ -1,6 +1,6 @@
 - insert:
     - id: grok-build-policy
-      name: grok-build-policy
+      name: dsh-grok-build-policy
       config:
         modelPattern: grok
         providerPattern: ''

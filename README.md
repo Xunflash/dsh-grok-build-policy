@@ -30,7 +30,7 @@ DeepSeek Harness 插件。当前模型 id 包含 `grok` 时，在系统提示词
 从 npm 安装：
 
 ```sh
-dsh plugin --profile web add grok-build-policy
+dsh plugin --profile web add dsh-grok-build-policy
 ```
 
 从 GitHub 安装：
@@ -68,7 +68,7 @@ dsh --profile web --dump-config
 
 ```yaml
 - id: grok-build-policy
-  name: grok-build-policy
+  name: dsh-grok-build-policy
   config:
     modelPattern: grok
     providerPattern: ""
@@ -77,7 +77,7 @@ dsh --profile web --dump-config
 ### 卸载
 
 ```sh
-dsh plugin --profile web remove grok-build-policy
+dsh plugin --profile web remove dsh-grok-build-policy
 ```
 
 ### 许可
@@ -112,7 +112,7 @@ Replace `web` with the profile that should receive the plugin. Installation appl
 Install from npm:
 
 ```sh
-dsh plugin --profile web add grok-build-policy
+dsh plugin --profile web add dsh-grok-build-policy
 ```
 
 Install from GitHub:
@@ -150,7 +150,7 @@ To change an installed profile, append an override to that profile's `cordis.pat
 
 ```yaml
 - id: grok-build-policy
-  name: grok-build-policy
+  name: dsh-grok-build-policy
   config:
     modelPattern: grok
     providerPattern: ""
@@ -159,7 +159,7 @@ To change an installed profile, append an override to that profile's `cordis.pat
 ### Remove
 
 ```sh
-dsh plugin --profile web remove grok-build-policy
+dsh plugin --profile web remove dsh-grok-build-policy
 ```
 
 ### License
